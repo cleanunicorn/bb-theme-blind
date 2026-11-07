@@ -1,0 +1,74 @@
+/* Cleanunicorn / Blind — calm surfaces, readable text, quiet chrome.
+ * Uses bb's derived surfaces and native focus treatment.
+ * Font sizes follow bb's defaults; no downloaded fonts.
+ */
+:root,
+.light {
+  --font-sans: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-terminal: var(--font-mono);
+
+  --canvas: #F7F6F2;
+  --sidebar: #EFEEEB;
+  --ink: #282B30;
+  --primary: #285EA0;
+  --primary-foreground: #FFFFFF;
+  --muted-foreground: #454B54;
+  --subtle-foreground: #50565F;
+  --readback-foreground: #4B515B;
+  --timeline-accent: #285EA0;
+  --file-accent: var(--timeline-accent);
+  --input: #80858D;
+  --destructive: #A53242;
+  --destructive-foreground: #FFFFFF;
+  --destructive-text: #A53242;
+  --warning: #885A18;
+  --warning-text: #795015;
+  --attention: #885A18;
+  --success: #2E694A;
+  --diff-added: #2E694A;
+  --diff-removed: #A53242;
+  --pr-merged: #715096;
+}
+
+.dark {
+  --canvas: #232529;
+  --sidebar: #292C31;
+  --ink: #E3E4E6;
+  --primary: #A4C4EE;
+  --primary-foreground: #1E3049;
+  --muted-foreground: #C5CAD2;
+  --subtle-foreground: #B8BFCA;
+  --readback-foreground: #BEC5CF;
+  --timeline-accent: #A4C4EE;
+  --file-accent: var(--timeline-accent);
+  --input: #7C838F;
+  --destructive: #E9A2AB;
+  --destructive-foreground: #3A1F25;
+  --destructive-text: #E9A2AB;
+  --warning: #DCC28F;
+  --warning-text: #DCC28F;
+  --attention: #DCC28F;
+  --success: #A5CCB3;
+  --diff-added: #A5CCB3;
+  --diff-removed: #E9A2AB;
+  --pr-merged: #C5B1DE;
+}
+
+/* Make prompt hints readable without adding a focus box to the editor. */
+:root .ProseMirror p.is-editor-empty:first-child::before {
+  color: var(--subtle-foreground);
+  font-weight: 400;
+  opacity: 1;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--subtle-foreground);
+  opacity: 1;
+}
+
+/* Respect reduced-motion preferences while retaining loading indicators. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  button, a, input, textarea, select { transition-duration: 0s; }
+}
