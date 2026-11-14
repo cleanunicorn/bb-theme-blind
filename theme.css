@@ -95,6 +95,12 @@ textarea::placeholder {
   }
 }
 
+/* Let the home compose page use the full width instead of bb's 760px column. */
+[data-testid="root-compose-compact-home"],
+[data-testid="root-compose-compact-home"] .max-w-\[760px\] {
+  max-width: none;
+}
+
 /* Respect reduced-motion preferences while retaining loading indicators. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
