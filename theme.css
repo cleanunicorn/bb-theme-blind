@@ -95,10 +95,19 @@ textarea::placeholder {
   }
 }
 
-/* Let the home compose page use the full width instead of bb's 760px column. */
+/* Let page columns (home compose, thread timeline and prompt, loading
+ * skeletons, full-page plugin views) use the full width instead of bb's
+ * 760px measure. bb uses this class only for those page columns. */
 [data-testid="root-compose-compact-home"],
-[data-testid="root-compose-compact-home"] .max-w-\[760px\] {
+.max-w-\[760px\] {
   max-width: none;
+}
+/* Thread pages overlay a table-of-contents rail on the right edge; keep the
+ * now full-width timeline and prompt clear of it. */
+@media (min-width: 768px) {
+  [data-thread-window]:has([data-scroll-overlay]) .max-w-\[760px\] {
+    padding-inline-end: 3rem;
+  }
 }
 
 /* Respect reduced-motion preferences while retaining loading indicators. */
