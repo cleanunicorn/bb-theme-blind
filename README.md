@@ -6,7 +6,7 @@ A custom [bb](https://getbb.app) palette with warm light surfaces, neutral charc
 - **Default bb font sizes** — no size or zoom overrides.
 - Bundled Inter and system monospace fonts; no external font downloads.
 - Readable prompt placeholders without an extra blue outline inside the composer.
-- Full-width home compose page instead of a narrow centered column.
+- Full-width home compose and thread pages instead of a narrow centered column.
 - Native bb focus styling, subdued decorative borders, and standard terminal colors.
 - Reduced-motion styling for control transitions and smooth scrolling.
 
